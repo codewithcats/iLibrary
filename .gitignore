@@ -2,4 +2,5 @@
 */.settings
 */target
 *.swp
-
+ilibrary-stock/ilibrary-stock-api/target/
+ilibrary-stock/ilibrary-stock-impl/target/
