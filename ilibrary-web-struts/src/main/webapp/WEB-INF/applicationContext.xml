@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+		
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/ilibrary" />
+		<property name="username" value="root" />
+		<property name="password" value="il0vebmw" />
+	</bean>
+	
+	<bean id="bookService" class="com.mrtanawat.ilibrary.stock.impl.SpringJDBCMySqlBookService"
+		scope="singleton">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	
+	<bean id="indexAction" class="com.mrtanawat.ilibrary.web.action.IndexAction"
+		scope="prototype"></bean>
+		
+	<bean id="loginAction" class="com.mrtanawat.ilibrary.web.action.LoginAction"
+		scope="prototype"></bean>
+		
+	<bean id="addBookAction" class="com.mrtanawat.ilibrary.web.action.AddBookAction"
+		scope="prototype">
+		<property name="bookService">
+			<ref bean="bookService"/>
+		</property>	
+	</bean>
+		
+</beans>

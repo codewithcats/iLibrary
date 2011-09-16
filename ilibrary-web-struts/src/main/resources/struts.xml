@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+	<package name="base" namespace="/" extends="struts-default">
+		<action name="index" class="indexAction" method="index">
+			<result name="xxx">/index.jsp</result>
+		</action>
+		<action name="login" class="loginAction" method="login" >
+			<result name="passed">/home.jsp</result>
+			<result name="failed">/index.jsp</result>
+		</action>
+	</package>
+	<package name="book" namespace="/book" extends="base">
+		<action name="add" class="addBookAction" method="add">
+			<result name="success">/home.jsp</result>
+		</action>
+	</package>
+
+</struts>
