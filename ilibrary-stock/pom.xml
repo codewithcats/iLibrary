@@ -12,7 +12,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
-	<name>iLibrary Stock Module</name>
+	<name>iLibrary Stock</name>
 	
 	<modules>
 		<module>ilibrary-stock-api</module>
