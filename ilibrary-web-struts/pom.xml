@@ -11,7 +11,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>iLibrary Web</name>
-	<description>iLibrary web application implement using Struts 2 framework</description>
+	<description>iLibrary web application using Struts 2 framework</description>
 	<dependencies>
 		<dependency>
 			<groupId>com.mrtanawat</groupId>
